@@ -4,6 +4,7 @@ import Row from "react-bootstrap/esm/Row";
 import FlatImagesSlider from "./FlatImagesSlider";
 import Carousel from "react-bootstrap/Carousel";
 
+// eslint-disable-next-line react/prop-types
 const FlatCard = ({ flat }) => {
   const tags = [
     "Ready to Move",
