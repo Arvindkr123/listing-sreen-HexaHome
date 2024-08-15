@@ -5,12 +5,21 @@ import FlatLists from "../components/flat-lists/FlatLists";
 import FilteredFlatsCategory from "../components/filter/FilteredFlatsCategory";
 const Home = () => {
   return (
-    <Container className="mt-5 bg-gradient">
+    <Container className="mt-5">
       <Row>
-        <Col>
+        <Col
+          md={5}
+          sm={3}
+          xs={"auto"}
+          style={{
+            height: "100vh",
+            position: "sticky",
+            top: "40px",
+          }}
+        >
           <FilteredFlatsCategory />
         </Col>
-        <Col>
+        <Col md={7} sm={9} xs={"auto"}>
           <FlatLists />
         </Col>
       </Row>

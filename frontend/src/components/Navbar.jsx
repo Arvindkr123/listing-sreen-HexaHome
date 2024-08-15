@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 function NavbarComponent() {
   const navigate = useNavigate();
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
+    <Navbar expand="lg" className="bg-body" fixed="top">
       <Container>
         <Navbar.Brand
           style={{ cursor: "pointer" }}

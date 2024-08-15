@@ -12,7 +12,7 @@ import Container from "react-bootstrap/Container";
 
 const FilteredFlatsCategory = () => {
   return (
-    <Container className="mt-5 my-5" fluid>
+    <Container className="mt-5 my-5 " fluid>
       <Card>
         <Card.Header className="d-flex align-items-center justify-content-between bg-body p-4">
           <Card.Title>
