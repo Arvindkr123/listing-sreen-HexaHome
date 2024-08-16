@@ -2,17 +2,18 @@ import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 const AppContextProvider = ({ children }) => {
   const [searchResultsData, setSearchResultData] = useState({
     location: "noida",
     propertyType: [],
     propertyCondition: [],
     bhkType: [],
-    bugetType: "1000",
+    bugetType: "",
     builtUpArea: "",
     furnishedType: [],
     facingType: [],
-    PostedBy: [],
+    postedByType: [],
     sortOrder: "",
   });
   return (

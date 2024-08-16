@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import "./BudgetType.css"; // Import custom CSS
+import { useAppContext } from "../../../context/AppContext";
 
 const formatCurrency = (value) => {
   if (value >= 10000000) {
@@ -20,8 +21,16 @@ const BudgetType = () => {
   const [minBudget, setMinBudget] = useState(1000); // Starting at ₹1K
   const maxBudget = 1000000000; // Fixed at ₹100Cr
 
+  const { setSearchResultData } = useAppContext();
+
+  //console.log(searchResultsData);
+
   const handleBudgetChange = (event) => {
     setMinBudget(Number(event.target.value));
+    setSearchResultData((prev) => ({
+      ...prev,
+      bugetType: formatCurrency(Number(event.target.value)),
+    }));
   };
 
   return (

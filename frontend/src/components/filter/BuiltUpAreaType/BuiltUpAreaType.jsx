@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import "./BudgetType.css"; // Import custom CSS
+import { useAppContext } from "../../../context/AppContext";
 
 const formatSquareFeet = (value) => {
   return `${value.toLocaleString()} sqft`;
@@ -12,9 +13,14 @@ const BuiltUpAreaType = () => {
   const [showPropertyTypes, setShowPropertyTypes] = useState(false);
   const [minArea, setMinArea] = useState(100); // Starting at 100 sqft
   const maxArea = 4000; // Fixed at 4000 sqft
+  const { setSearchResultData } = useAppContext();
 
   const handleAreaChange = (event) => {
     setMinArea(Number(event.target.value));
+    setSearchResultData((prev) => ({
+      ...prev,
+      builtUpArea: formatSquareFeet(Number(event.target.value)),
+    }));
   };
 
   return (

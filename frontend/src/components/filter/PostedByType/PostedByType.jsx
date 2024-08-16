@@ -2,10 +2,34 @@ import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
+import { useAppContext } from "../../../context/AppContext";
 
 const PostedByType = () => {
   const [showPropertyTypes, setShowPropertyTypes] = useState(false);
   const propertyTypeOptions = ["Owner", "Dealer", "Builder"];
+
+  const { searchResultsData, setSearchResultData } = useAppContext();
+  console.log(searchResultsData.postedByType);
+
+  const handleCheckBoxChange = (postedByType) => {
+    setSearchResultData((prev) => {
+      const postedByTypeArray = prev.postedByType || [];
+      if (postedByTypeArray?.includes(postedByType)) {
+        return {
+          ...prev,
+          postedByType: postedByTypeArray.filter(
+            (item) => item !== postedByType
+          ),
+        };
+      } else {
+        return {
+          ...prev,
+          postedByType: [...postedByTypeArray, postedByType],
+        };
+      }
+    });
+  };
+
   return (
     <Container fluid className="border-bottom p-3">
       <p
@@ -31,6 +55,10 @@ const PostedByType = () => {
                     type="checkbox"
                     id="option1"
                     className="form-check-input"
+                    checked={searchResultsData?.postedByType?.includes(
+                      propertyType
+                    )}
+                    onChange={() => handleCheckBoxChange(propertyType)}
                   />
                   {propertyType}
                 </label>

@@ -2,6 +2,7 @@ import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
+import { useAppContext } from "../../../context/AppContext";
 
 const FurnishType = () => {
   const [showPropertyTypes, setShowPropertyTypes] = useState(false);
@@ -10,6 +11,29 @@ const FurnishType = () => {
     "Semi Furnished",
     "Fully Furnished",
   ];
+
+  const { searchResultsData, setSearchResultData } = useAppContext();
+  //console.log(searchResultsData.furnishedType);
+
+  const handleCheckBoxChange = (furnishedType) => {
+    setSearchResultData((prev) => {
+      const furnishedTypeArray = prev.furnishedType || [];
+      if (furnishedTypeArray?.includes(furnishedType)) {
+        return {
+          ...prev,
+          furnishedType: furnishedTypeArray.filter(
+            (item) => item !== furnishedType
+          ),
+        };
+      } else {
+        return {
+          ...prev,
+          furnishedType: [...furnishedTypeArray, furnishedType],
+        };
+      }
+    });
+  };
+
   return (
     <Container fluid className="border-bottom p-3">
       <p
@@ -35,6 +59,10 @@ const FurnishType = () => {
                     type="checkbox"
                     id="option1"
                     className="form-check-input"
+                    checked={searchResultsData.furnishedType?.includes(
+                      propertyType
+                    )}
+                    onChange={() => handleCheckBoxChange(propertyType)}
                   />
                   {propertyType}
                 </label>
