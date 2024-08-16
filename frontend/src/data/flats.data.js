@@ -9,7 +9,7 @@ const flatsLists = [
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
-      "1550 Sq ft",
+      "1550 sqft",
       "Floor 3/4",
     ],
     images: [
@@ -24,7 +24,7 @@ const flatsLists = [
     price: "32.5L",
     title: "2BHK Individual Floor for sale",
     location: "Bisrakh Jalalpur, Greater Noida",
-    owner: "Yogita Chauhan",
+    owner: "owner Yogita Chauhan",
     tags: [
       "3BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
