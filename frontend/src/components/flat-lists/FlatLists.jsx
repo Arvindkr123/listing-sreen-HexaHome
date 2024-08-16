@@ -5,19 +5,12 @@ import Col from "react-bootstrap/Col";
 import flatsLists from "../../data/flats.data";
 import FlatCard from "./FlatCard";
 import Stack from "react-bootstrap/Stack";
+import { useAppContext } from "../../context/AppContext";
 
 const FlatLists = () => {
-  const [sortOption, setSortOption] = useState(""); // Set default value
-  const options = [
-    "Relevance",
-    "Newest First",
-    "Price (Low to High)",
-    "Price (High to Low)",
-  ];
-
-  const handleSelect = (option) => {
-    setSortOption(option);
-  };
+  const { searchResultsData, setSearchResultData } = useAppContext(); // Set default value
+  //console.log(searchResultsData.sortOrder);
+  const options = ["Relevance", "Newest First", "Low to High", "High to Low"];
 
   return (
     <Container fluid className="mt-5 my-5 p-2 ">
@@ -27,19 +20,27 @@ const FlatLists = () => {
           <Col sm={true} lg={true} md={true} xs={true}>
             {" "}
             <p className="">
-              <b>{flatsLists.length} results |</b> Properties in Noida for Buy
+              <b>{flatsLists.length} results |</b> Properties in{" "}
+              {searchResultsData?.location[0]?.toUpperCase() +
+                searchResultsData?.location.slice(1)}{" "}
+              for Buy
             </p>
           </Col>
           <Col sm={true} lg={true} md={true} xs={true}>
             <select
               className="form-select"
-              value={sortOption} // Set the selected value
-              onChange={(e) => handleSelect(e.target.value)}
+              value={searchResultsData?.sortOrder} // Set the selected value
+              onChange={(e) =>
+                setSearchResultData((prev) => ({
+                  ...prev,
+                  sortOrder: e.target.value,
+                }))
+              }
             >
               <option
-                value={sortOption}
+                value={searchResultsData?.sortOrder}
                 className=""
-              >{`Sort By:${sortOption}`}</option>
+              >{`Sort By:${searchResultsData?.sortOrder}`}</option>
               {options.map((optionVal) => (
                 <option key={optionVal} value={optionVal}>
                   {optionVal}
@@ -51,7 +52,7 @@ const FlatLists = () => {
       </Container>
       {/* Lists Of Flats goes here ....... */}
 
-      <Stack gap={2} className="">
+      <Stack gap={2} className="mt-3">
         {flatsLists.map((flatData, index) => {
           return <FlatCard flat={flatData} key={index} />;
         })}

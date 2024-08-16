@@ -4,8 +4,10 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 function NavbarComponent() {
   const navigate = useNavigate();
+  const { searchResultsData, setSearchResultData } = useAppContext();
   return (
     <Navbar expand="lg" className="bg-body" fixed="top">
       <Container>
@@ -28,6 +30,13 @@ function NavbarComponent() {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              value={searchResultsData.location}
+              onChange={(e) =>
+                setSearchResultData((prev) => ({
+                  ...prev,
+                  location: e.target.value.toLowerCase(),
+                }))
+              }
             />
             <Button variant="outline-success">Search</Button>
           </Form>
