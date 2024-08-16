@@ -6,9 +6,9 @@ const AppContextProvider = ({ children }) => {
   const [searchResultsData, setSearchResultData] = useState({
     location: "noida",
     propertyType: [],
-    propertCondition: [],
+    propertyCondition: [],
     bhkType: [],
-    bugetType: "",
+    bugetType: "1000",
     builtUpArea: "",
     furnishedType: [],
     facingType: [],

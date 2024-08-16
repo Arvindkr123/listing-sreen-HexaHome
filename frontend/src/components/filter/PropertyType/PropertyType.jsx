@@ -2,9 +2,12 @@ import Stack from "react-bootstrap/Stack";
 import Container from "react-bootstrap/Container";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
+import { useAppContext } from "../../../context/AppContext";
 
 const PropertyType = () => {
   const [showPropertyTypes, setShowPropertyTypes] = useState(false);
+  const { searchResultsData, setSearchResultData } = useAppContext();
+  //console.log(searchResultsData);
   const propertyTypeOptions = [
     "Individual Floor",
     "Apartment",
@@ -12,6 +15,24 @@ const PropertyType = () => {
     "Independent Villa",
     "Plot/Land",
   ];
+
+  const handleCheckboxChange = (propertyType) => {
+    setSearchResultData((prev) => {
+      const propertyTypes = prev.propertyType || [];
+      if (propertyTypes.includes(propertyType)) {
+        return {
+          ...prev,
+          propertyType: propertyTypes.filter((type) => type !== propertyType),
+        };
+      } else {
+        return {
+          ...prev,
+          propertyType: [...propertyTypes, propertyType],
+        };
+      }
+    });
+  };
+
   return (
     <Container fluid className="border-bottom p-3">
       <p
@@ -32,11 +53,13 @@ const PropertyType = () => {
                   style={{ cursor: "pointer" }}
                   className="form-check-label"
                 >
-                  {" "}
                   <input
                     type="checkbox"
-                    id="option1"
                     className="form-check-input"
+                    onChange={() => handleCheckboxChange(propertyType)}
+                    checked={searchResultsData.propertyType?.includes(
+                      propertyType
+                    )}
                   />
                   {propertyType}
                 </label>
