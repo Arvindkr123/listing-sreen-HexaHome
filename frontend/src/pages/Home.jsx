@@ -15,6 +15,7 @@ const Home = () => {
             height: "100vh",
             position: "sticky",
             top: "40px",
+            overflow: "auto",
           }}
         >
           <FilteredFlatsCategory />

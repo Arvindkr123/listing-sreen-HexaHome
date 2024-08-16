@@ -6,18 +6,11 @@ import Carousel from "react-bootstrap/Carousel";
 
 // eslint-disable-next-line react/prop-types
 const FlatCard = ({ flat }) => {
-  const tags = [
-    "Ready to Move",
-    "Less than a year old",
-    "Freehold",
-    "Residential",
-    "Individual Floor",
-  ];
-
   // Group tags by 3 per slide
+  //console.log(flat.tags);
   const groupedTags = [];
-  for (let i = 0; i < tags.length; i += 3) {
-    groupedTags.push(tags.slice(i, i + 4));
+  for (let i = 0; i < flat.tags.length; i += 3) {
+    groupedTags.push(flat.tags.slice(i, i + 4));
   }
 
   return (
@@ -28,10 +21,9 @@ const FlatCard = ({ flat }) => {
         </Col>
         <Col lg={8} md={9}>
           <Container fluid>
-            <h5>₹ 32.1L</h5>
+            <h5>₹ {flat.price}</h5>
             <p>
-              <b>2BHK Individual Floor for sale</b> in Bisrakh Jalalpur, Greater
-              Noida
+              <b>{flat.title}</b> in {flat.location}
             </p>
 
             {/* Slider for Tags */}
@@ -48,6 +40,9 @@ const FlatCard = ({ flat }) => {
                 </Carousel.Item>
               ))}
             </Carousel>
+
+            <hr />
+            <p>{flat.owner}</p>
           </Container>
         </Col>
       </Row>

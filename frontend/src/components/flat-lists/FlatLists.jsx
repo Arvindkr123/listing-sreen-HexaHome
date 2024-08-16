@@ -52,8 +52,8 @@ const FlatLists = () => {
       {/* Lists Of Flats goes here ....... */}
 
       <Stack gap={2} className="">
-        {flatsLists.map((flatData) => {
-          return <FlatCard flat={flatData} key={flatData.id} />;
+        {flatsLists.map((flatData, index) => {
+          return <FlatCard flat={flatData} key={index} />;
         })}
       </Stack>
     </Container>
