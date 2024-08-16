@@ -44,17 +44,14 @@ const FlatLists = () => {
 
     // Check if any of the tags match the bhkType criteria
     const isBhkTypeMatch = searchResultsData.bhkType.some((bhk) =>
-      flat.tags.some((tag) => tag.toLowerCase().includes(bhk.toLowerCase()))
+      flat.tags.some((tag) => tag.includes(bhk))
     );
 
     //console.log(isBhkTypeMatch);
 
     // Check if any of the tags match the furnishedType criteria
     const isFurnishedTypeMatch = searchResultsData.furnishedType.some(
-      (furnished) =>
-        flat.tags.some((tag) =>
-          tag.toLowerCase().includes(furnished.toLowerCase())
-        )
+      (furnished) => flat.tags.some((tag) => tag.includes(furnished))
     );
 
     // Check if any of the tags match the facingType criteria
@@ -86,8 +83,10 @@ const FlatLists = () => {
             {" "}
             <p className="">
               <b>{filteredFlatListsData.length} results |</b> Properties in{" "}
-              {searchResultsData?.location[0]?.toUpperCase() +
-                searchResultsData?.location.slice(1)}{" "}
+              {(searchResultsData?.location &&
+                searchResultsData?.location[0]?.toUpperCase() +
+                  searchResultsData?.location.slice(1)) ||
+                ""}{" "}
               for Buy
             </p>
           </Col>

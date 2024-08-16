@@ -2,10 +2,11 @@ const flatsLists = [
   {
     price: "49.8L",
     title: "3BHK Individual Floor for sale",
-    location: "Bisrakh Jalalpur, Greater Noida",
+    location: "Bisrakh Jalalpur, Greater delhi",
     owner: "Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "3 BHK",
+      "3 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -23,10 +24,11 @@ const flatsLists = [
   {
     price: "32.5L",
     title: "2BHK Individual Floor for sale",
-    location: "Bisrakh Jalalpur, Greater Noida",
+    location: "Bisrakh Jalalpur, Greater Badaun",
     owner: "owner Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "2 BHK",
+      "2 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -43,11 +45,12 @@ const flatsLists = [
   },
   {
     price: "49.5L",
-    title: "3BHK Individual Floor for sale",
-    location: "Bisrakh Jalalpur, Greater Noida",
+    title: "5BHK Individual Floor for sale",
+    location: "Bisrakh Jalalpur, Greater Sehswan",
     owner: "Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "5 BHK",
+      "5 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -65,10 +68,11 @@ const flatsLists = [
   {
     price: "32.1L",
     title: "2BHK Individual Floor for sale",
-    location: "Bisrakh Jalalpur, Greater Noida",
+    location: "Bisrakh Jalalpur, Greater Faridabad",
     owner: "Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "1 BHK",
+      "1 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -89,7 +93,8 @@ const flatsLists = [
     location: "Sector 16b, Greater Noida",
     owner: "Rahul Gupta",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "2 BHK",
+      "2 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -110,7 +115,8 @@ const flatsLists = [
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "3 BHK, 3 Bath, 3+ Balconies",
+      "3 BHK",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -131,7 +137,8 @@ const flatsLists = [
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "4 BHK",
+      "4 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -148,10 +155,11 @@ const flatsLists = [
   },
   {
     price: "23.5L",
-    title: "4BHK Individual Floor for sale",
+    title: "4 BHK Individual Floor for sale",
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     tags: [
+      "3 BHK",
       "3BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
@@ -169,10 +177,11 @@ const flatsLists = [
   },
   {
     price: "70.5L",
-    title: "4BHK Individual Floor for sale",
+    title: "4 BHK Individual Floor for sale",
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     tags: [
+      "3 BHK",
       "3BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
@@ -190,10 +199,11 @@ const flatsLists = [
   },
   {
     price: "85.5L",
-    title: "4BHK Individual Floor for sale",
+    title: "4 BHK Individual Floor for sale",
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     tags: [
+      "3 BHK",
       "3BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
@@ -215,7 +225,8 @@ const flatsLists = [
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "3 BHK",
+      "3 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",
@@ -236,7 +247,8 @@ const flatsLists = [
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     tags: [
-      "3BHK, 3 Bath, 3+ Balconies",
+      "3 BHK",
+      "3 BHK, 3 Bath, 3+ Balconies",
       "Ready To Move",
       "1 to 3 years old",
       "Semi Furnished",

@@ -5,7 +5,7 @@ const AppContext = createContext();
 // eslint-disable-next-line react/prop-types
 const AppContextProvider = ({ children }) => {
   const [searchResultsData, setSearchResultData] = useState({
-    location: "noida",
+    location: "",
     propertyType: [],
     propertyCondition: [],
     bhkType: [],
