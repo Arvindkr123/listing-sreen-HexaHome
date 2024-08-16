@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search for properties based on your criteria."
+    />
+    <title>Property Search</title>
+  </head>
+  <body>
+    <h1>Search Properties</h1>
+    <form action="/properties" method="get">
+      <label for="location">Location:</label>
+      <input
+        type="text"
+        name="location"
+        id="location"
+        placeholder="Enter location"
+      />
+
+      <label for="minPrice">Min Price:</label>
+      <input
+        type="number"
+        name="minPrice"
+        id="minPrice"
+        placeholder="Enter minimum price"
+      />
+
+      <label for="maxPrice">Max Price:</label>
+      <input
+        type="number"
+        name="maxPrice"
+        id="maxPrice"
+        placeholder="Enter maximum price"
+      />
+
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>
