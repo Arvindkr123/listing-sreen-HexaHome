@@ -23,7 +23,7 @@ app.get("/properties", (req, res) => {
 
   // Filter properties based on search criteria
   let filteredProperties = properties.filter((property) => {
-    console.log(property.price, minPrice, maxPrice);
+    // console.log(property.price, minPrice, maxPrice);
     return (
       (!location ||
         property.location.toLowerCase().includes(location.toLowerCase())) &&
