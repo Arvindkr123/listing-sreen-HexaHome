@@ -37,6 +37,16 @@ const FlatLists = () => {
     );
   });
 
+  //console.log(searchResultsData.sortOrder)
+
+  if (searchResultsData.sortOrder === "Low to High") {
+    filteredFlatListsData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+  } else if (searchResultsData.sortOrder === "High to Low") {
+    filteredFlatListsData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  }
+  // Additional sorting logic can be added here.
+
+
 
 
 
