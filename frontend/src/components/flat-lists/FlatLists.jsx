@@ -11,7 +11,34 @@ const FlatLists = () => {
   //console.log(searchResultsData.sortOrder);
   const options = ["Relevance", "Newest First", "Low to High", "High to Low"];
 
-  const filteredFlatListsData = flatsLists
+  // price: '32.1L',
+  // title: '2BHK Individual Floor for sale',
+  // location: 'Bisrakh Jalalpur, Greater Noida',
+  // owner: 'Yogita Chauhan',
+  // propertyType: 'Individual Floor',
+  // propertyCondition: 'Ready To Move',
+  // bhkType: '3 BHK',
+  // bugetType: '₹ 32.1L',
+  // builtUpArea: '1020 sqft',
+  // furnishedType: 'Semi Furnished',
+  // facingType: 'North East',
+  // postedByType: 'Builder',
+
+  const filteredFlatListsData = flatsLists.filter((flat) => {
+    return (
+      (!searchResultsData.location ||
+        flat.location.toLowerCase().includes(searchResultsData.location.toLowerCase())) &&
+      (!searchResultsData.propertyType.length || searchResultsData.propertyType.includes(flat.propertyType)) &&
+      (!searchResultsData.propertyCondition.length || searchResultsData.propertyCondition.includes(flat.propertyCondition)) &&
+      (!searchResultsData.bhkType.length || searchResultsData.bhkType.includes(flat.bhkType)) &&
+      (!searchResultsData.facingType.length || searchResultsData.facingType.includes(flat.facingType)) &&
+      (!searchResultsData.furnishedType.length || searchResultsData.furnishedType.includes(flat.furnishedType)) &&
+      (!searchResultsData.postedByType.length || searchResultsData.postedByType.includes(flat.postedByType))
+    );
+  });
+
+
+
 
   // Example output to verify the filtered results
   //console.log(filteredFlatListsData);

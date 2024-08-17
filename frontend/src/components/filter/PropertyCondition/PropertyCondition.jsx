@@ -6,7 +6,7 @@ import { useAppContext } from "../../../context/AppContext";
 
 const PropertyCondition = () => {
   const [showPropertyTypes, setShowPropertyTypes] = useState(false);
-  const propertyConditionOptions = ["Ready to move", "Under Construction"];
+  const propertyConditionOptions = ["Ready To Move", "Under Construction"];
   const { searchResultsData, setSearchResultData } = useAppContext();
   //console.log(searchResultsData.propertyCondition);
 
