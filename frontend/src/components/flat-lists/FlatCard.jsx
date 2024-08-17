@@ -4,14 +4,16 @@ import Row from "react-bootstrap/esm/Row";
 import FlatImagesSlider from "./FlatImagesSlider";
 import Carousel from "react-bootstrap/Carousel";
 
-// eslint-disable-next-line react/prop-types
-const FlatCard = ({ flat }) => {
+const FlatCard = ({ flat, groupedTags }) => {
   // Group tags by 3 per slide
-  //console.log(flat.tags);
-  const groupedTags = [];
-  for (let i = 0; i < flat.tags?.length; i += 3) {
-    groupedTags.push(flat.tags?.slice(i, i + 4));
+  const groupSize = 4;
+  const groupedTagsArray = [];
+
+  for (let i = 0; i < groupedTags.length; i += groupSize) {
+    groupedTagsArray.push(groupedTags.slice(i, i + groupSize));
   }
+
+  //console.log(groupedTagsArray)
 
   return (
     <Container fluid className="bg-body p-3">
@@ -28,11 +30,11 @@ const FlatCard = ({ flat }) => {
 
             {/* Slider for Tags */}
             <Carousel className="mt-3">
-              {groupedTags.map((tagGroup, index) => (
+              {groupedTagsArray?.map((tagGroup, index) => (
                 <Carousel.Item key={index}>
                   <div className="d-flex justify-content-center">
-                    {tagGroup.map((tag, i) => (
-                      <span key={i} className="badge bg-secondary mx-1">
+                    {tagGroup.map((tag, idx) => (
+                      <span key={idx} className="badge bg-secondary mx-1">
                         {tag}
                       </span>
                     ))}
@@ -43,6 +45,7 @@ const FlatCard = ({ flat }) => {
 
             <hr />
             <p>{flat?.owner}</p>
+            <p>{flat?.postedByType}</p>
           </Container>
         </Col>
       </Row>
