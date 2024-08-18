@@ -1,13 +1,13 @@
 const flatsLists = [
   {
     price: "53L",
-    title: "3BHK Individual Floor for sale",
+    title: "1BHK Individual Floor for sale",
     location: "Amnabad Village, Sector 1, Greater Noida",
     owner: "Yogita Chauhan",
     propertyType: "Individual Floor",
     propertyCondition: "Ready To Move",
     bhkType: "1 BHK",
-    bugetType: "₹13.68Cr",
+    bugetType: "₹ 53L",
     builtUpArea: "577 sqft",
     furnishedType: "Semi Furnished",
     facingType: "North",
@@ -85,7 +85,7 @@ const flatsLists = [
   },
   {
     price: "32.1L",
-    title: "2BHK Individual Floor for sale",
+    title: "3BHK Individual Floor for sale",
     location: "Bisrakh Jalalpur, Greater Noida",
     owner: "Yogita Chauhan",
     propertyType: "Individual Floor",
