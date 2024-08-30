@@ -1,0 +1,100 @@
+[
+  {
+    "invoice_id": "INV001",
+    "status": "paid",
+    "description": "Office Chair",
+    "amount": 150.0,
+    "date": "2024-07-01T09:00:00.000Z"
+  },
+  {
+    "invoice_id": "INV002",
+    "status": "pending",
+    "description": "Desk Lamp",
+    "amount": 45.0,
+    "date": "2024-07-02T10:15:30.000Z"
+  },
+  {
+    "invoice_id": "INV003",
+    "status": "paid",
+    "description": "Printer Cartridge",
+    "amount": 30.0,
+    "date": "2024-07-03T11:30:45.000Z"
+  },
+  {
+    "invoice_id": "INV004",
+    "status": "canceled",
+    "description": "Laptop Stand",
+    "amount": 25.0,
+    "date": "2024-07-04T12:45:50.000Z"
+  },
+  {
+    "invoice_id": "INV005",
+    "status": "paid",
+    "description": "Monitor",
+    "amount": 200.0,
+    "date": "2024-07-05T14:00:00.000Z"
+  },
+  {
+    "invoice_id": "INV006",
+    "status": "refunded",
+    "description": "Mouse",
+    "amount": 20.0,
+    "date": "2024-07-06T15:15:10.000Z"
+  },
+  {
+    "invoice_id": "INV007",
+    "status": "pending",
+    "description": "Keyboard",
+    "amount": 60.0,
+    "date": "2024-07-07T16:30:25.000Z"
+  },
+  {
+    "invoice_id": "INV008",
+    "status": "paid",
+    "description": "Webcam",
+    "amount": 75.0,
+    "date": "2024-07-08T17:45:40.000Z"
+  },
+  {
+    "invoice_id": "INV009",
+    "status": "canceled",
+    "description": "Docking Station",
+    "amount": 120.0,
+    "date": "2024-07-09T18:55:55.000Z"
+  },
+  {
+    "invoice_id": "INV010",
+    "status": "paid",
+    "description": "External Hard Drive",
+    "amount": 100.0,
+    "date": "2024-07-10T20:00:00.000Z"
+  },
+  {
+    "invoice_id": "INV011",
+    "status": "refunded",
+    "description": "USB Hub",
+    "amount": 35.0,
+    "date": "2024-07-11T21:15:10.000Z"
+  },
+  {
+    "invoice_id": "INV012",
+    "status": "pending",
+    "description": "Laptop Bag",
+    "amount": 85.0,
+    "date": "2024-07-12T22:30:25.000Z"
+  },
+  {
+    "invoice_id": "INV013",
+    "status": "paid",
+    "description": "Surge Protector",
+    "amount": 40.0,
+    "date": "2024-07-13T23:45:40.000Z"
+  },
+  {
+    "invoice_id": "INV014",
+    "status": "canceled",
+    "description": "Phone Stand",
+    "amount": 15.0,
+    "date": "2024-07-14T00:55:55.000Z"
+  }
+]
