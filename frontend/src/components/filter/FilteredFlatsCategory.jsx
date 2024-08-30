@@ -9,8 +9,25 @@ import FurnishType from "./FurnishType/FurnishType.jsx";
 import FacingType from "./FacingType/FacingType.jsx";
 import PostedByType from "./PostedByType/PostedByType.jsx";
 import Container from "react-bootstrap/Container";
+import { useAppContext } from "../../context/AppContext.jsx";
 
 const FilteredFlatsCategory = () => {
+  const { setSearchResultData } = useAppContext();
+
+  const clearSearhResultHandler = () => {
+    setSearchResultData({
+      location: "",
+      propertyType: [],
+      propertyCondition: [],
+      bhkType: [],
+      bugetType: "",
+      builtUpArea: "",
+      furnishedType: [],
+      facingType: [],
+      postedByType: [],
+      sortOrder: "",
+    });
+  };
   return (
     <Container className="mt-5 my-5 " fluid>
       <Card>
@@ -18,7 +35,7 @@ const FilteredFlatsCategory = () => {
           <Card.Title>
             <h3>Filters</h3>
           </Card.Title>
-          <Button variant="light" size="sm">
+          <Button onClick={clearSearhResultHandler} variant="light" size="sm">
             Clear All
           </Button>
         </Card.Header>

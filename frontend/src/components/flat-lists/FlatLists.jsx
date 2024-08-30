@@ -7,48 +7,42 @@ import Stack from "react-bootstrap/Stack";
 import { useAppContext } from "../../context/AppContext";
 
 const FlatLists = () => {
-  const { searchResultsData, setSearchResultData } = useAppContext(); // Set default value
-  //console.log(searchResultsData.sortOrder);
+  const { searchResultsData, setSearchResultData } = useAppContext();
   const options = ["Relevance", "Newest First", "Low to High", "High to Low"];
-
-  // price: '32.1L',
-  // title: '2BHK Individual Floor for sale',
-  // location: 'Bisrakh Jalalpur, Greater Noida',
-  // owner: 'Yogita Chauhan',
-  // propertyType: 'Individual Floor',
-  // propertyCondition: 'Ready To Move',
-  // bhkType: '3 BHK',
-  // bugetType: '₹ 32.1L',
-  // builtUpArea: '1020 sqft',
-  // furnishedType: 'Semi Furnished',
-  // facingType: 'North East',
-  // postedByType: 'Builder',
 
   const filteredFlatListsData = flatsLists.filter((flat) => {
     return (
       (!searchResultsData.location ||
-        flat.location.toLowerCase().includes(searchResultsData.location.toLowerCase())) &&
-      (!searchResultsData.propertyType.length || searchResultsData.propertyType.includes(flat.propertyType)) &&
-      (!searchResultsData.propertyCondition.length || searchResultsData.propertyCondition.includes(flat.propertyCondition)) &&
-      (!searchResultsData.bhkType.length || searchResultsData.bhkType.includes(flat.bhkType)) &&
-      (!searchResultsData.facingType.length || searchResultsData.facingType.includes(flat.facingType)) &&
-      (!searchResultsData.furnishedType.length || searchResultsData.furnishedType.includes(flat.furnishedType)) &&
-      (!searchResultsData.postedByType.length || searchResultsData.postedByType.includes(flat.postedByType))
+        flat.location
+          .toLowerCase()
+          .includes(searchResultsData.location.toLowerCase())) &&
+      (!searchResultsData.propertyType.length ||
+        searchResultsData.propertyType.includes(flat.propertyType)) &&
+      (!searchResultsData.propertyCondition.length ||
+        searchResultsData.propertyCondition.includes(flat.propertyCondition)) &&
+      (!searchResultsData.bhkType.length ||
+        searchResultsData.bhkType.includes(flat.bhkType)) &&
+      (!searchResultsData.facingType.length ||
+        searchResultsData.facingType.includes(flat.facingType)) &&
+      (!searchResultsData.furnishedType.length ||
+        searchResultsData.furnishedType.includes(flat.furnishedType)) &&
+      (!searchResultsData.postedByType.length ||
+        searchResultsData.postedByType.includes(flat.postedByType))
     );
   });
 
   //console.log(searchResultsData.sortOrder)
 
   if (searchResultsData.sortOrder === "Low to High") {
-    filteredFlatListsData.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    filteredFlatListsData.sort(
+      (a, b) => parseFloat(a.price) - parseFloat(b.price)
+    );
   } else if (searchResultsData.sortOrder === "High to Low") {
-    filteredFlatListsData.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    filteredFlatListsData.sort(
+      (a, b) => parseFloat(b.price) - parseFloat(a.price)
+    );
   }
   // Additional sorting logic can be added here.
-
-
-
-
 
   // Example output to verify the filtered results
   //console.log(filteredFlatListsData);
@@ -67,7 +61,7 @@ const FlatLists = () => {
               <b>{filteredFlatListsData.length} results |</b> Properties in{" "}
               {(searchResultsData?.location &&
                 searchResultsData?.location[0]?.toUpperCase() +
-                searchResultsData?.location.slice(1)) ||
+                  searchResultsData?.location.slice(1)) ||
                 ""}{" "}
               for Buy
             </p>
@@ -98,7 +92,6 @@ const FlatLists = () => {
       </Container>
       {/* Lists Of Flats goes here ....... */}
 
-
       <Stack gap={2} className="mt-3">
         {filteredFlatListsData?.map((flatData, index) => {
           const groupedTags = [
@@ -111,7 +104,9 @@ const FlatLists = () => {
             flatData.postedByType,
             flatData.builtUpArea,
           ];
-          return <FlatCard groupedTags={groupedTags} flat={flatData} key={index} />;
+          return (
+            <FlatCard groupedTags={groupedTags} flat={flatData} key={index} />
+          );
         })}
       </Stack>
     </Container>
